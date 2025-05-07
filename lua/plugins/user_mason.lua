@@ -13,11 +13,10 @@ return {
         "lua-language-server",
         "bash-language-server",
         "awk-language-server",
+        "marksman",
 
         -- install formatters
         "stylua",
-        "shellcheck",
-        "editorconfig-checker",
         "shellcheck",
         "shfmt",
         "pyright",
