@@ -1,6 +1,13 @@
 return {
   "AstroNvim/astrocore",
   opts = {
+    -- passed to `vim.filetype.add`
+    filetypes = {
+      -- see `:h vim.filetype.add` for usage
+      extension = {
+        tmpl = "bash",
+      },
+    },
     options = {
       opt = { -- vim.opt.<key>
         relativenumber = true, -- sets vim.opt.relativenumber
