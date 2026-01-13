@@ -4,5 +4,5 @@ return {
   -- example of importing a plugin
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
-  -- { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.python" },
 }
