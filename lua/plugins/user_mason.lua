@@ -14,6 +14,7 @@ return {
         "bash-language-server",
         "awk-language-server",
         "marksman",
+        "texlab",
 
         -- install formatters
         "stylua",
