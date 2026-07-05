@@ -1,7 +1,4 @@
 return {
-  {
-    -- Junos Syntax highlighting
-    "lkowolowski/junos.vim",
-    name = "junos.vim",
-  },
+  "lkowolowski/junos.vim",
+  name = "junos.vim",
 }
