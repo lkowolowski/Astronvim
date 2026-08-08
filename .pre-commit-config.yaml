@@ -18,23 +18,12 @@ repos:
       - id: end-of-file-fixer
       - id: check-merge-conflict
       - id: check-yaml
-        args: [--unsafe] # allows YAML anchors
+        args: [--unsafe]  # allows YAML anchors
+      - id: check-json
       - id: check-added-large-files
         args: [--maxkb=100]
       - id: mixed-line-ending
         args: [--fix=lf]
-
-  # ── ShellCheck — static analysis for shell scripts ───────────────────────
-  - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.11.0.1
-    hooks:
-      - id: shellcheck
-        name: shellcheck (zsh files)
-        types: [] # override default type filter
-        files: '\.(zsh)$'
-        args:
-          - --severity=warning # error + warning; style is informational only
-          - --color=always
 
   # ── yamllint — YAML style and syntax ─────────────────────────────────────
   - repo: https://github.com/adrienverge/yamllint
@@ -46,14 +35,44 @@ repos:
 
   # ── markdownlint — Markdown style ────────────────────────────────────────
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.48.0
+    rev: v0.49.1
     hooks:
       - id: markdownlint
         args: [--config, .markdownlint.yml]
 
-  # ── checkmake — Makefile linter ──────────────────────────────────────────
-  # Built in pre-commit's sandbox — no system install required.
-  - repo: https://github.com/checkmake/checkmake.git
-    rev: v0.3.0
+  # ── StyLua — Lua formatter ───────────────────────────────────────────────
+  - repo: https://github.com/JohnnyMorganz/stylua
+    rev: v2.5.2
     hooks:
-      - id: checkmake
+      - id: stylua-system
+        args: [--check, --config-path, .stylua.toml]
+
+  # ── selene — Lua linter ──────────────────────────────────────────────────
+  - repo: local
+    hooks:
+      - id: selene
+        name: selene
+        entry: selene
+        args: [--config, selene.toml]
+        language: system
+        types: [lua]
+
+  # ── Taplo — TOML formatter ───────────────────────────────────────────────
+  - repo: https://github.com/ComPWA/taplo-pre-commit
+    rev: v0.9.3
+    hooks:
+      - id: taplo-format
+        args: [--check]
+
+  # ── editorconfig-checker — enforce .editorconfig ─────────────────────────
+  - repo: https://github.com/editorconfig-checker/editorconfig-checker
+    rev: v3.10.0
+    hooks:
+      - id: editorconfig-checker
+
+  # ── codespell — spelling of code and prose ───────────────────────────────
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.4.3
+    hooks:
+      - id: codespell
+        args: [-L, ans]

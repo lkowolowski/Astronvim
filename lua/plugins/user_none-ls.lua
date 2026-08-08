@@ -6,8 +6,6 @@ return {
     opts.sources = require("astrocore").list_insert_unique(opts.sources, {
       null_ls.builtins.formatting.prettier,
     })
-    opts.sources = vim.tbl_filter(function(source)
-      return source.name ~= "black"
-    end, opts.sources)
+    opts.sources = vim.tbl_filter(function(source) return source.name ~= "black" end, opts.sources)
   end,
 }
