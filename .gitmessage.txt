@@ -1,0 +1,11 @@
+# Type: [feat|fix|docs|refactor|test|chore]
+# Scope: (optional module or file name)
+# Subject: (short imperative description)
+
+# Body:
+# - Motivation and context
+# - Link to related issues or tickets
+
+# Footer:
+# - Breaking changes
+# - Related discussions
