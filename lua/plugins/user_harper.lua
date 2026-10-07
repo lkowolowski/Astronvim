@@ -10,7 +10,7 @@ return {
         harper_ls = {
           settings = {
             ["harper-ls"] = {
-              userDictPath = vim.fn.expand "~/.config/dict.txt",
+              userDictPath = vim.fn.expand "~/.config/harper-ls/dictionary.txt",
               workspaceDictPath = "",
               fileDictPath = "",
               linters = {
