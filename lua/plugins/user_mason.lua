@@ -10,9 +10,10 @@ return {
       -- Make sure to use the names found in `:Mason`
       ensure_installed = {
         -- install language servers
-        "lua-language-server",
-        "bash-language-server",
         "awk-language-server",
+        "bash-language-server",
+        "harper-ls",
+        "lua-language-server",
         "marksman",
         "texlab",
 
