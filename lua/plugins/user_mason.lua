@@ -12,18 +12,17 @@ return {
         -- install language servers
         "awk-language-server",
         "bash-language-server",
-        "harper-ls",
         "lua-language-server",
         "marksman",
+        "pyright",
+        "ruff",
         "texlab",
 
         -- install formatters
-        "stylua",
+        "prettier",
         "shellcheck",
         "shfmt",
-        "pyright",
-        "prettier",
-        "pylint",
+        "stylua",
 
         -- install debuggers
         -- "debugpy",
