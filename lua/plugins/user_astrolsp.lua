@@ -4,9 +4,8 @@ return {
   ---@type AstroLSPOpts
   opts = {
     servers = {
-      basedpyright = {},
       pyright = false,
-      pyrefly = false,
+      ruff = false,
     },
     features = {
       codelens = true,
