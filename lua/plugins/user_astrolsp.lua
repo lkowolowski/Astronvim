@@ -34,13 +34,24 @@ return {
       n = {
         K = {
           function()
-            vim.lsp.buf.hover {
-              border = "single",
-              max_height = 25,
-              max_width = 120,
-            }
+            local has_hover = false
+            for _, client in ipairs(vim.lsp.get_clients { bufnr = 0 }) do
+              if client:supports_method "textDocument/hover" then
+                has_hover = true
+                break
+              end
+            end
+            if has_hover then
+              vim.lsp.buf.hover {
+                border = "single",
+                max_height = 25,
+                max_width = 120,
+              }
+            else
+              vim.diagnostic.open_float()
+            end
           end,
-          desc = "Hover documentation",
+          desc = "Hover documentation (or diagnostic)",
         },
         gD = {
           function() vim.lsp.buf.declaration() end,
