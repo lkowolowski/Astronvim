@@ -9,9 +9,9 @@ rules:
     max: 120
     level: warning
 
-  # Comments: require a space after #, but don't enforce inline comment spacing
+  # Comments: require a space after #; spacing matches prettier's 1-space normalization
   comments:
-    min-spaces-from-content: 2
+    min-spaces-from-content: 1
 
   # Braces: allow flow mappings on one line
   braces:
