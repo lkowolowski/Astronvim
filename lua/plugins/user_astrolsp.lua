@@ -16,7 +16,7 @@ return {
       format_on_save = {
         enabled = true,
       },
-      timeout_ms = 1000,
+      timeout_ms = 3000,
     },
     autocmds = {
       lsp_codelens_refresh = {
