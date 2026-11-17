@@ -13,7 +13,7 @@ return {
         "awk-language-server",
         "bash-language-server",
         "lua-language-server",
-        "marksman",
+        "rumdl",
         "pyright",
         "ruff",
         "texlab",

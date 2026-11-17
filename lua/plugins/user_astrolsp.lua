@@ -6,6 +6,14 @@ return {
     servers = {
       pyright = false,
       ruff = false,
+      rumdl = true,
+    },
+    config = {
+      rumdl = {
+        cmd = { "rumdl", "server" },
+        filetypes = { "markdown" },
+        root_markers = { ".rumdl.toml", "rumdl.toml", ".git" },
+      },
     },
     features = {
       codelens = true,
