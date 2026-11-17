@@ -59,6 +59,9 @@ return {
       format_on_save = {
         enabled = true,
       },
+      disabled = {
+        "harper_ls",
+      },
       timeout_ms = 1000,
     },
     autocmds = {
