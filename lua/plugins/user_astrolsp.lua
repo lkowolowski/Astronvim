@@ -4,15 +4,50 @@ return {
   ---@type AstroLSPOpts
   opts = {
     servers = {
-      pyright = false,
-      ruff = false,
-      rumdl = true,
+      "harper_ls",
+      "pyright",
+      "ruff",
+      "rumdl",
     },
     config = {
       rumdl = {
         cmd = { "rumdl", "server" },
         filetypes = { "markdown" },
         root_markers = { ".rumdl.toml", "rumdl.toml", ".git" },
+      },
+      harper_ls = {
+        filetypes = { "markdown", "text", "gitcommit", "typst" },
+        settings = {
+          ["harper-ls"] = {
+            workspaceDictPath = "",
+            userDictPath = "~/.config/harper-ls/dictionary.txt",
+            linters = {
+              -- Set specific rules to false to disable them
+              SpellCheck = true,
+              SpelledNumbers = false,
+              AnA = true,
+              SentenceCapitalization = true,
+              UnclosedQuotes = true,
+              WrongApostrophe = false,
+              LongSentences = true,
+              RepeatedWords = true,
+              Spaces = true,
+              CorrectNumberSuffix = true,
+            },
+            codeActions = {
+              ForceStable = false,
+            },
+            markdown = {
+              IgnoreLinkTitle = false,
+            },
+            diagnosticSeverity = "hint",
+            isolateEnglish = false,
+            dialect = "American",
+            maxFileLength = 120000,
+            ignoredLintsPath = "",
+            excludePatterns = {},
+          },
+        },
       },
     },
     features = {
@@ -24,7 +59,7 @@ return {
       format_on_save = {
         enabled = true,
       },
-      timeout_ms = 3000,
+      timeout_ms = 1000,
     },
     autocmds = {
       lsp_codelens_refresh = {
